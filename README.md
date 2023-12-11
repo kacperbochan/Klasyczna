@@ -1,4 +1,5 @@
-Projekt do trenowania do egzaminu z Muzyki Klasycznej
+**Projekt do trenowania do egzaminu z Muzyki Klasycznej**
+
 
 ![image](https://github.com/kacperbochan/Klasyczna/assets/45052903/fe12470d-9800-4d7b-ae22-4e9b228d781c)
 
