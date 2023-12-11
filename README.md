@@ -7,13 +7,13 @@ Gdy wybierzemy "Sprawdź" pokaże autora i tytuł
 ![image](https://github.com/kacperbochan/Klasyczna/assets/45052903/820452ee-f090-4281-819f-5ccdd8862d2a)
 
 
-Następny - daje następny utwór i chowa odpowiedź
+**Następny** - daje następny utwór i chowa odpowiedź
 
-Sprawdź - pokazuje tytuł i kompozytora
+**Sprawdź** - pokazuje tytuł i kompozytora
 
-<< 30s / >> 30s - przewijanie (przydatne gdy utwór ma na początek 15s ciszy - Patrzę na ciebie 24 kaprysy 😠)
+**<< 30s / >> 30s** - przewijanie (przydatne gdy utwór ma na początek 15s ciszy - Patrzę na ciebie 24 kaprysy 😠)
 
-Od/Do utworu - pomaga w uczeniu się utworów grupami. Kolejność taka jak z wykładów
+**Od/Do utworu** - pomaga w uczeniu się utworów grupami. Kolejność taka jak z wykładów
 
 
 Najlepiej będzie odpalić to przez VSCode i odpalić main.py
