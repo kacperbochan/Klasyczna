@@ -9,8 +9,9 @@ from tkinter.font import Font
 
 # Function to play music
 def play_music():
-    global upper_limit, lower_limit, file_index
+    global upper_limit, lower_limit, file_index, current_track_pos
 
+    current_track_pos = 0
     randId = -1
     if upper_limit-lower_limit==0:
         randId = lower_limit
@@ -64,23 +65,37 @@ def update_file_index_upper(value):
 
 # Function to skip ahead 30 seconds in the music
 def skip_ahead():
+    global current_track_pos  # Use the global variable to keep track of position
+
     if pygame.mixer.music.get_busy():  # Check if music is playing
-        current_pos = pygame.mixer.music.get_pos() / 1000  # Get current position in seconds
-        new_pos = current_pos + 30  # Calculate new position
+        elapsed_time = pygame.mixer.music.get_pos() / 1000  # Time elapsed since last play in seconds
+        current_track_pos += elapsed_time  # Update the absolute position
+        new_pos = current_track_pos + 30  # Calculate new position
         pygame.mixer.music.play(0, new_pos)  # Start playing at the new position
+
+        current_track_pos = new_pos  # Update current position for next skip
         
 # Function to go back 30 seconds in the music
 def go_back():
+    global current_track_pos  # Use the global variable to keep track of position
+
     if pygame.mixer.music.get_busy():  # Check if music is playing
-        current_pos = pygame.mixer.music.get_pos() / 1000  # Get current position in seconds
-        new_pos = current_pos - 30  # Calculate new position
+        elapsed_time = pygame.mixer.music.get_pos() / 1000  # Time elapsed since last play in seconds
+        current_track_pos += elapsed_time  # Update the absolute position
+        new_pos = current_track_pos - 30  # Calculate new position
         pygame.mixer.music.play(0, new_pos)  # Start playing at the new position
+
+        current_track_pos = new_pos  # Update current position for next skip
+        
 
 # Initialize data
 titles, composers = GetTitlesAndAuthors()
 lower_limit = 0
 upper_limit = 10
 file_index = lower_limit+random.choice(range(upper_limit-lower_limit))
+
+# Initialize a variable to keep track of the absolute position
+current_track_pos = 0
 
 # Creating main window
 root = tk.Tk()
